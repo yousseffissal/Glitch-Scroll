@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <title>Glitch#01</title>
+    <link rel="icon" href="images/Gli.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="background: white;">
+
+<div class="popup-area">
+    <div class="popup">
+        <img  src="images/manga-pro.jpg" alt="">
+        <h3>!!!واش أسي أكيرا</h3>
+        <p>المهم أخاي هادشي لي مقاد فالصفاحي تاع القصة مزيان شي لاخر يا اما صفاحي غيبانو من بعد صفاحي اخرين باقي مرسمتهمش و لا باقين مكاملينش هاد 28 صفحة هي لي نقدر نعتابرها مقادة تالدابا الفصل طويل بزاف و فيه أحداث كثيرة حينت مقدمة للقصة و لكن فاللخر غيطلع ناضي خاصني غير نكملو قرا هادشي و القوادة ديال الصح غتجي من بعد هادي غير الدخلة  </p>
+        <button type="button" onclick=NoPopUP()>OKK!! <i class='bx bxs-like' ></i></button>
+    </div>
+</div>
+
+    <button onclick="Top()" class="Top"><i class='bx bx-up-arrow-alt'></i></button>
+    <script>
+        function Top() {
+            window.scrollTo(0,0);
+        }
+    </script>
+    <header style="background: rgba(12, 0, 12, 0.973);" class="header">
+        <div class="logo">
+        <div class="plogo">
+        <img height="40px"  src="images/Gli.png" alt="">
+        </div>
+        <div>
+        <h3 class="ptitle">Glitch</h3>
+        </div>
+        </div>
+        <h3 class="number">#01</h3>
+        </header>
+ 
+    <section class="Manga">
+        <div class="U"> </div>
+    </section>
+
+    
+    <script>
+        { 
+            const header = document.querySelector(".header");
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener("scroll" , () => {
+                if (lastScrollY < window.scrollY) {
+                    header.classList.add("header--hidden");
+                } else {
+                    header.classList.remove("header--hidden");
+                }
+                lastScrollY = window.scrollY;
+            });
+        }
+        function setPages(n) {
+    for(let i=0; i<=n; i++)
+        document.querySelector(".U").innerHTML += (
+            `<img src="Glitch/${i}.jpg" />`
+        )
+    }
+
+setPages(28)
+
+        let popuparea = document.querySelector('.popup-area')
+        function NoPopUP() {
+            popuparea.style.display = 'none'
+        }
+    </script>
+</body>
+</html>
